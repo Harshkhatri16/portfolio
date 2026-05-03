@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Terminal } from 'lucide-react';
 
 const GithubIcon = ({ size = 20 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -40,21 +40,25 @@ const Navbar = () => {
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-bold gradient-text"
+          whileHover={{ scale: 1.05 }}
+          className="text-2xl font-bold gradient-text flex items-center gap-2"
         >
-          HK.
+          <Terminal className="text-primary" size={24} />
+          <span>HK.</span>
         </motion.div>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
-            <a 
+            <motion.a 
               key={link.name} 
               href={link.href}
-              className="text-textSecondary hover:text-primary transition-colors font-medium"
+              whileHover={{ y: -2, color: '#3B82F6' }}
+              className="text-textSecondary transition-colors font-medium relative group"
             >
               {link.name}
-            </a>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+            </motion.a>
           ))}
           <div className="flex items-center space-x-4 border-l border-white/10 pl-8">
             <a href="https://github.com/Harshkhatri16" target="_blank" rel="noopener noreferrer" className="text-textSecondary hover:text-white transition-colors">

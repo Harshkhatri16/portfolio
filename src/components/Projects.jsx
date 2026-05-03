@@ -13,7 +13,7 @@ const Projects = () => {
     {
       title: "Medico",
       description: "A specialized platform connecting patients with professional nurses for home-based treatment. Features include appointment scheduling and nurse management.",
-      tech: ["React", "PHP", "MySQL", "Tailwind"],
+      tech: ["MongoDB", "Express", "React", "Node.js"],
       icon: <Heart className="text-red-500" />,
       image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1000",
       link: "#",
@@ -22,7 +22,7 @@ const Projects = () => {
     {
       title: "Gym Bro",
       description: "Comprehensive CRM for gym owners to manage memberships, attendance, and business analytics. Streamlines operations and enhances member engagement.",
-      tech: ["React", "Bootstrap", "PHP", "MySQL"],
+      tech: ["MongoDB", "Express", "React", "Node.js"],
       icon: <Dumbbell className="text-primary" />,
       image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1000",
       link: "#",

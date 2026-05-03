@@ -34,7 +34,7 @@ const About = () => {
               I am Harsh Khatri, an IT student with a deep interest in web development and software engineering. Currently pursuing my Bachelor of Computer Application & Information Technology, I've built a strong foundation in both frontend and backend technologies.
             </p>
             <p className="text-textSecondary mb-8 leading-relaxed">
-              My journey started with a curiosity for how things work on the internet, which led me to master React, PHP, and modern CSS frameworks like Tailwind. I love turning complex problems into simple, beautiful, and intuitive designs.
+              My journey started with a curiosity for how things work on the internet, which led me to master React, Node.js, and modern CSS frameworks like Tailwind. I love turning complex problems into simple, beautiful, and intuitive designs.
             </p>
 
             <div className="grid grid-cols-2 gap-4">

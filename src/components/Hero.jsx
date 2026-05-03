@@ -64,7 +64,7 @@ const Hero = () => {
                   <div className="p-2 bg-secondary/20 rounded-lg text-secondary"><Server size={24} /></div>
                   <div>
                     <div className="text-sm font-bold">Backend</div>
-                    <div className="text-xs text-textSecondary">PHP, MySQL</div>
+                    <div className="text-xs text-textSecondary">Node.js, MongoDB</div>
                   </div>
                 </div>
               </div>
@@ -89,9 +89,36 @@ const Hero = () => {
           </div>
           
           {/* Decorative Elements */}
-          <div className="absolute -top-6 -right-6 w-12 h-12 glass rounded-xl border-white/20 animate-bounce flex items-center justify-center text-primary">
+          <motion.div 
+            animate={{ 
+              y: [0, -15, 0],
+              rotate: [0, 10, 0]
+            }}
+            transition={{ 
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="absolute -top-6 -right-6 w-12 h-12 glass rounded-xl border-white/20 flex items-center justify-center text-primary shadow-[0_0_15px_rgba(59,130,246,0.5)]"
+          >
             <Code size={20} />
-          </div>
+          </motion.div>
+          
+          <motion.div 
+            animate={{ 
+              y: [0, 15, 0],
+              rotate: [0, -10, 0]
+            }}
+            transition={{ 
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1
+            }}
+            className="absolute -bottom-6 -left-6 w-12 h-12 glass rounded-xl border-white/20 flex items-center justify-center text-secondary shadow-[0_0_15px_rgba(99,102,241,0.5)]"
+          >
+            <Terminal size={20} />
+          </motion.div>
         </motion.div>
       </div>
     </section>
