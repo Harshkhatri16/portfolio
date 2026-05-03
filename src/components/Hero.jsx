@@ -1,6 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Code, Server, Layout, Terminal } from 'lucide-react';
+
+const ProfileCard = () => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  return (
+    <div 
+      className="mt-8 relative w-full aspect-square cursor-pointer [perspective:1000px] group"
+      onClick={() => setIsFlipped(!isFlipped)}
+    >
+      <motion.div
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{ duration: 0.6, type: "spring", stiffness: 260, damping: 20 }}
+        className="relative w-full h-full [transform-style:preserve-3d]"
+      >
+        {/* Front side */}
+        <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-primary/20 to-secondary/20">
+          <img 
+            src="/harsh.png" 
+            alt="Harsh Khatri" 
+            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center pb-8">
+             <div className="glass px-4 py-2 rounded-full text-white text-sm font-bold flex items-center gap-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                </span>
+                Click to Flip
+             </div>
+          </div>
+        </div>
+
+        {/* Back side */}
+        <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl overflow-hidden border border-white/20 bg-surface flex flex-col items-center justify-center p-8 text-center shadow-2xl shadow-primary/20">
+            <motion.div
+              animate={{ 
+                rotate: [0, 20, -10, 20, 0],
+                scale: [1, 1.1, 1]
+              }}
+              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+              className="text-8xl mb-6 select-none"
+            >
+              👋
+            </motion.div>
+            <h3 className="text-3xl font-bold gradient-text mb-3">Hello!</h3>
+            <p className="text-textSecondary text-lg leading-relaxed">
+              I'm <span className="text-primary font-bold">Harsh</span>. <br />
+              Ready to turn your ideas into reality!
+            </p>
+            <div className="mt-6 flex gap-3">
+               <div className="h-2 w-2 rounded-full bg-primary opacity-50"></div>
+               <div className="h-2 w-2 rounded-full bg-secondary opacity-50"></div>
+               <div className="h-2 w-2 rounded-full bg-accent opacity-50"></div>
+            </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
 
 const Hero = () => {
   return (
@@ -50,42 +109,45 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.2 }}
           className="relative hidden lg:block"
         >
-          <div className="relative z-10 glass rounded-3xl p-8 border-white/20">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="p-4 bg-white/5 rounded-2xl border border-white/10 flex items-center space-x-3">
+          <div className="relative z-10 glass rounded-[2.5rem] p-10 border-white/20">
+            <div className="grid grid-cols-2 gap-6">
+              <div className="space-y-6">
+                <motion.div 
+                  whileHover={{ y: -5 }}
+                  className="p-4 bg-white/5 rounded-2xl border border-white/10 flex items-center space-x-3"
+                >
                   <div className="p-2 bg-primary/20 rounded-lg text-primary"><Code size={24} /></div>
                   <div>
                     <div className="text-sm font-bold">Frontend</div>
                     <div className="text-xs text-textSecondary">React, JS</div>
                   </div>
-                </div>
-                <div className="p-4 bg-white/5 rounded-2xl border border-white/10 flex items-center space-x-3">
+                </motion.div>
+                <motion.div 
+                  whileHover={{ y: -5 }}
+                  className="p-4 bg-white/5 rounded-2xl border border-white/10 flex items-center space-x-3"
+                >
                   <div className="p-2 bg-secondary/20 rounded-lg text-secondary"><Server size={24} /></div>
                   <div>
                     <div className="text-sm font-bold">Backend</div>
                     <div className="text-xs text-textSecondary">Node.js, MongoDB</div>
                   </div>
-                </div>
+                </motion.div>
               </div>
-              <div className="pt-8">
-                <div className="p-4 bg-white/5 rounded-2xl border border-white/10 flex items-center space-x-3">
+              <div className="pt-10">
+                <motion.div 
+                  whileHover={{ y: -5 }}
+                  className="p-4 bg-white/5 rounded-2xl border border-white/10 flex items-center space-x-3"
+                >
                   <div className="p-2 bg-accent/20 rounded-lg text-accent"><Layout size={24} /></div>
                   <div>
                     <div className="text-sm font-bold">Design</div>
                     <div className="text-xs text-textSecondary">Figma, UI/UX</div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
             
-            {/* Dummy Profile Image Placeholder */}
-            <div className="mt-8 rounded-2xl overflow-hidden aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 border border-white/10 flex items-center justify-center relative group">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1000')] bg-cover bg-center opacity-50 grayscale group-hover:grayscale-0 transition-all duration-500"></div>
-                <div className="relative z-10 text-center">
-                    <span className="text-4xl font-bold opacity-30">HK.</span>
-                </div>
-            </div>
+            <ProfileCard />
           </div>
           
           {/* Decorative Elements */}
@@ -99,9 +161,9 @@ const Hero = () => {
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="absolute -top-6 -right-6 w-12 h-12 glass rounded-xl border-white/20 flex items-center justify-center text-primary shadow-[0_0_15px_rgba(59,130,246,0.5)]"
+            className="absolute -top-6 -right-6 w-14 h-14 glass rounded-2xl border-white/20 flex items-center justify-center text-primary shadow-[0_0_20px_rgba(59,130,246,0.3)] z-20"
           >
-            <Code size={20} />
+            <Code size={24} />
           </motion.div>
           
           <motion.div 
@@ -115,9 +177,9 @@ const Hero = () => {
               ease: "easeInOut",
               delay: 1
             }}
-            className="absolute -bottom-6 -left-6 w-12 h-12 glass rounded-xl border-white/20 flex items-center justify-center text-secondary shadow-[0_0_15px_rgba(99,102,241,0.5)]"
+            className="absolute -bottom-6 -left-6 w-14 h-14 glass rounded-2xl border-white/20 flex items-center justify-center text-secondary shadow-[0_0_20px_rgba(99,102,241,0.3)] z-20"
           >
-            <Terminal size={20} />
+            <Terminal size={24} />
           </motion.div>
         </motion.div>
       </div>
