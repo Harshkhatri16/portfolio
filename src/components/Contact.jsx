@@ -100,11 +100,11 @@ const Contact = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-bold mb-2 ml-2">Full Name</label>
-                  <input type="text" className="w-full bg-background/50 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary transition-colors" placeholder="John Doe" />
+                  <input type="text" className="w-full bg-background/50 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary transition-colors" placeholder="Your Name" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold mb-2 ml-2">Email Address</label>
-                  <input type="email" className="w-full bg-background/50 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary transition-colors" placeholder="john@example.com" />
+                  <input type="email" className="w-full bg-background/50 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-primary transition-colors" placeholder="your@email.com" />
                 </div>
               </div>
               <div>
