@@ -35,8 +35,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'glass py-4' : 'bg-transparent py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+    <nav className={`fixed left-0 right-0 z-50 transition-all duration-500 flex justify-center ${scrolled ? 'top-6' : 'top-0'}`}>
+      <div className={`transition-all duration-500 flex justify-between items-center ${
+        scrolled 
+          ? 'glass rounded-full py-3 px-8 w-[90%] max-w-7xl shadow-2xl shadow-primary/10' 
+          : 'w-full py-6 px-12 bg-background/80 backdrop-blur-xl border-b border-white/5'
+      }`}>
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -76,27 +80,27 @@ const Navbar = () => {
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-      </div>
 
-      {/* Mobile Nav */}
-      {isOpen && (
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden glass absolute top-full left-0 w-full p-6 space-y-4"
-        >
-          {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="block text-textSecondary hover:text-primary transition-colors py-2"
-            >
-              {link.name}
-            </a>
-          ))}
-        </motion.div>
-      )}
+        {/* Mobile Nav */}
+        {isOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="md:hidden glass absolute top-full left-0 right-0 mt-4 mx-4 p-6 rounded-3xl space-y-4"
+          >
+            {navLinks.map((link) => (
+              <a 
+                key={link.name} 
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="block text-textSecondary hover:text-primary transition-colors py-2"
+              >
+                {link.name}
+              </a>
+            ))}
+          </motion.div>
+        )}
+      </div>
     </nav>
   );
 };
