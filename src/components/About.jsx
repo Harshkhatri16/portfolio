@@ -5,7 +5,7 @@ import { GraduationCap, Briefcase, MapPin, Calendar } from 'lucide-react';
 const About = () => {
   const stats = [
     { label: 'Experience', value: '1+ Year', icon: <Briefcase size={20} /> },
-    { label: 'Education', value: 'BCA & IT', icon: <GraduationCap size={20} /> },
+    { label: 'Education', value: 'MSc (CA & IT)', icon: <GraduationCap size={20} /> },
     { label: 'Location', value: 'Bhuj, Gujarat', icon: <MapPin size={20} /> },
     { label: 'Age', value: '20 Years', icon: <Calendar size={20} /> },
   ];
@@ -31,7 +31,7 @@ const About = () => {
           >
             <h3 className="text-2xl font-bold mb-6 text-primary">I'm a Developer & Designer.</h3>
             <p className="text-textSecondary mb-6 leading-relaxed">
-              I am Harsh Khatri, an IT student with a deep interest in web development and software engineering. Currently pursuing my Bachelor of Computer Application & Information Technology, I've built a strong foundation in both frontend and backend technologies.
+              I am Harsh Khatri, an IT student with a deep interest in web development and software engineering. Currently pursuing my Master of Computer Application & Information Technology, I've built a strong foundation in both frontend and backend technologies.
             </p>
             <p className="text-textSecondary mb-8 leading-relaxed">
               My journey started with a curiosity for how things work on the internet, which led me to master React, Node.js, and modern CSS frameworks like Tailwind. I love turning complex problems into simple, beautiful, and intuitive designs.
