@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Code, Server, Layout } from 'lucide-react';
+import { ArrowRight, Code, Server, Layout, Terminal } from 'lucide-react';
 
 const Hero = () => {
   return (
