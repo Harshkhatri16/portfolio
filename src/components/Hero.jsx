@@ -34,26 +34,36 @@ const ProfileCard = () => {
         </div>
 
         {/* Back side */}
-        <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl overflow-hidden border border-white/20 bg-surface flex flex-col items-center justify-center p-8 text-center shadow-2xl shadow-primary/20">
+        <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl overflow-hidden border border-white/20 bg-surface relative flex items-center justify-center">
             <motion.div
               animate={{ 
-                y: [0, -10, 0],
-                rotate: [0, 5, -5, 5, 0]
+                scale: [1, 1.05, 1],
               }}
-              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-              className="w-32 h-32 mb-6 rounded-full overflow-hidden border-2 border-primary/30 shadow-lg"
+              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+              className="absolute inset-0 w-full h-full"
             >
               <img src="/avatar.png" alt="Avatar" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent"></div>
             </motion.div>
-            <h3 className="text-3xl font-bold gradient-text mb-3">Hello!</h3>
-            <p className="text-textSecondary text-lg leading-relaxed">
-              I'm <span className="text-primary font-bold">Harsh</span>. <br />
-              Ready to turn your ideas into reality!
-            </p>
-            <div className="mt-6 flex gap-3">
-               <div className="h-2 w-2 rounded-full bg-primary opacity-50"></div>
-               <div className="h-2 w-2 rounded-full bg-secondary opacity-50"></div>
-               <div className="h-2 w-2 rounded-full bg-accent opacity-50"></div>
+            
+            <div className="relative z-10 p-8 text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+              >
+                <h3 className="text-4xl font-bold gradient-text mb-3">Hello!</h3>
+                <p className="text-white text-lg leading-relaxed font-medium">
+                  I'm <span className="text-primary font-bold text-xl">Harsh Khatri</span>. <br />
+                  Let's create something <br />
+                  <span className="text-secondary">extraordinary</span> together!
+                </p>
+                <div className="mt-6 flex justify-center gap-3">
+                   <div className="h-2 w-2 rounded-full bg-primary animate-bounce"></div>
+                   <div className="h-2 w-2 rounded-full bg-secondary animate-bounce delay-100"></div>
+                   <div className="h-2 w-2 rounded-full bg-accent animate-bounce delay-200"></div>
+                </div>
+              </motion.div>
             </div>
         </div>
       </motion.div>
