@@ -34,34 +34,36 @@ const ProfileCard = () => {
         </div>
 
         {/* Back side */}
-        <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl overflow-hidden border border-white/20 bg-surface relative flex items-center justify-center">
+        <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-[2.5rem] overflow-hidden border border-white/20 bg-surface relative">
+            {/* Background Avatar Image */}
             <motion.div
               animate={{ 
                 scale: [1, 1.05, 1],
               }}
-              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="absolute inset-0 w-full h-full"
+              transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
+              className="absolute inset-0 w-full h-full overflow-hidden"
             >
               <img src="/Avatar.png" alt="Avatar" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
             </motion.div>
             
-            <div className="relative z-10 p-8 text-center">
+            {/* Content Overlay */}
+            <div className="absolute inset-0 flex flex-col items-center justify-end p-10 z-10">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
+                className="w-full glass p-6 rounded-3xl border-white/10 backdrop-blur-xl shadow-2xl"
               >
-                <h3 className="text-4xl font-bold gradient-text mb-3">Hello!</h3>
-                <p className="text-white text-lg leading-relaxed font-medium">
-                  I'm <span className="text-primary font-bold text-xl">Harsh Khatri</span>. <br />
-                  Let's create something <br />
-                  <span className="text-secondary">extraordinary</span> together!
+                <h3 className="text-3xl font-bold gradient-text mb-2">Hello!</h3>
+                <p className="text-textSecondary text-base leading-relaxed">
+                  I'm <span className="text-primary font-bold">Harsh Khatri</span>. <br />
+                  Let's build something <span className="text-white font-medium italic">extraordinary</span> together!
                 </p>
-                <div className="mt-6 flex justify-center gap-3">
-                   <div className="h-2 w-2 rounded-full bg-primary animate-bounce"></div>
-                   <div className="h-2 w-2 rounded-full bg-secondary animate-bounce delay-100"></div>
-                   <div className="h-2 w-2 rounded-full bg-accent animate-bounce delay-200"></div>
+                <div className="mt-4 flex justify-center gap-2">
+                   <div className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce"></div>
+                   <div className="h-1.5 w-1.5 rounded-full bg-secondary animate-bounce delay-150"></div>
+                   <div className="h-1.5 w-1.5 rounded-full bg-accent animate-bounce delay-300"></div>
                 </div>
               </motion.div>
             </div>
