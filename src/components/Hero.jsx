@@ -42,7 +42,7 @@ const ProfileCard = () => {
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
               className="absolute inset-0 w-full h-full"
             >
-              <img src="/avatar.png" alt="Avatar" className="w-full h-full object-cover" />
+              <img src="/Avatar.png" alt="Avatar" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent"></div>
             </motion.div>
             
