@@ -35,13 +35,26 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed left-0 right-0 z-50 transition-all duration-500 flex justify-center ${scrolled ? 'top-6' : 'top-0'}`}>
-      <div className={`transition-all duration-500 flex justify-between items-center ${
-        scrolled 
-          ? 'glass rounded-full py-3 px-8 w-[90%] max-w-7xl shadow-2xl shadow-primary/10' 
-          : 'w-full py-6 px-12 bg-background/80 backdrop-blur-xl border-b border-white/5'
-      }`}>
+    <motion.nav 
+      initial={false}
+      animate={{ 
+        top: scrolled ? 20 : 0,
+        width: scrolled ? "90%" : "100%",
+        maxWidth: scrolled ? "1200px" : "100%"
+      }}
+      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      className="fixed left-1/2 -translate-x-1/2 z-50 flex justify-center"
+    >
+      <motion.div 
+        layout
+        className={`flex justify-between items-center w-full transition-all duration-500 ${
+          scrolled 
+            ? 'glass rounded-full py-3 px-8 shadow-2xl shadow-primary/10' 
+            : 'py-6 px-12 bg-background/80 backdrop-blur-xl border-b border-white/5'
+        }`}
+      >
         <motion.div 
+          layout
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           whileHover={{ scale: 1.05 }}
@@ -52,9 +65,10 @@ const Navbar = () => {
         </motion.div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8">
+        <motion.div layout className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <motion.a 
+              layout
               key={link.name} 
               href={link.href}
               whileHover={{ y: -2, color: '#3B82F6' }}
@@ -64,22 +78,22 @@ const Navbar = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
             </motion.a>
           ))}
-          <div className="flex items-center space-x-4 border-l border-white/10 pl-8">
+          <motion.div layout className="flex items-center space-x-4 border-l border-white/10 pl-8">
             <a href="https://github.com/Harshkhatri16" target="_blank" rel="noopener noreferrer" className="text-textSecondary hover:text-white transition-colors">
               <GithubIcon size={20} />
             </a>
             <a href="https://www.linkedin.com/in/harsh-khatri-183390245/" target="_blank" rel="noopener noreferrer" className="text-textSecondary hover:text-white transition-colors">
               <LinkedinIcon size={20} />
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Mobile Toggle */}
-        <div className="md:hidden">
+        <motion.div layout className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="text-textPrimary">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-        </div>
+        </motion.div>
 
         {/* Mobile Nav */}
         {isOpen && (
@@ -100,8 +114,8 @@ const Navbar = () => {
             ))}
           </motion.div>
         )}
-      </div>
-    </nav>
+      </motion.div>
+    </motion.nav>
   );
 };
 
