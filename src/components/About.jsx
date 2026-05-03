@@ -58,7 +58,7 @@ const About = () => {
           >
             <div className="glass p-4 rounded-3xl rotate-3 hover:rotate-0 transition-transform duration-500">
                <div className="aspect-[4/5] bg-gradient-to-br from-secondary/20 to-primary/20 rounded-2xl overflow-hidden flex items-center justify-center relative">
-                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=1000')] bg-cover bg-center opacity-40"></div>
+                  <div className="absolute inset-0 bg-[url('/about.jpeg')] bg-cover bg-center opacity-80"></div>
                   <div className="relative z-10 p-8 text-center bg-background/40 backdrop-blur-sm rounded-xl m-6">
                     <p className="italic text-lg font-medium text-white mb-2">"Coding is not just about writing lines of text; it's about solving real-world problems with elegance."</p>
                     <p className="text-primary font-bold text-sm">— Harsh Khatri</p>
