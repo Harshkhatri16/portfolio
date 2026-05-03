@@ -37,13 +37,13 @@ const ProfileCard = () => {
         <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl overflow-hidden border border-white/20 bg-surface flex flex-col items-center justify-center p-8 text-center shadow-2xl shadow-primary/20">
             <motion.div
               animate={{ 
-                rotate: [0, 20, -10, 20, 0],
-                scale: [1, 1.1, 1]
+                y: [0, -10, 0],
+                rotate: [0, 5, -5, 5, 0]
               }}
-              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-              className="text-8xl mb-6 select-none"
+              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+              className="w-32 h-32 mb-6 rounded-full overflow-hidden border-2 border-primary/30 shadow-lg"
             >
-              👋
+              <img src="/avatar.png" alt="Avatar" className="w-full h-full object-cover" />
             </motion.div>
             <h3 className="text-3xl font-bold gradient-text mb-3">Hello!</h3>
             <p className="text-textSecondary text-lg leading-relaxed">
