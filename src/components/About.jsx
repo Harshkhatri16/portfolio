@@ -3,11 +3,22 @@ import { motion } from 'framer-motion';
 import { GraduationCap, Briefcase, MapPin, Calendar } from 'lucide-react';
 
 const About = () => {
+  const calculateAge = (birthDate) => {
+    const today = new Date();
+    const birth = new Date(birthDate);
+    let age = today.getFullYear() - birth.getFullYear();
+    const monthDiff = today.getMonth() - birth.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+      age--;
+    }
+    return age;
+  };
+
   const stats = [
     { label: 'Experience', value: '1+ Year', icon: <Briefcase size={20} /> },
     { label: 'Education', value: 'MSc (CA & IT)', icon: <GraduationCap size={20} /> },
     { label: 'Location', value: 'Bhuj, Gujarat', icon: <MapPin size={20} /> },
-    { label: 'Age', value: '20 Years', icon: <Calendar size={20} /> },
+    { label: 'Age', value: `${calculateAge('2004-08-16')} Years`, icon: <Calendar size={20} /> },
   ];
 
   return (
