@@ -35,35 +35,28 @@ const ProfileCard = () => {
 
         {/* Back side */}
         <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-[2.5rem] overflow-hidden border border-white/20 bg-surface relative">
-            {/* Background Avatar Image */}
-            <motion.div
-              animate={{ 
-                scale: [1, 1.05, 1],
-              }}
-              transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
-              className="absolute inset-0 w-full h-full overflow-hidden"
-            >
+            {/* Background Avatar Image (Static as requested) */}
+            <div className="absolute inset-0 w-full h-full overflow-hidden">
               <img src="/Avatar.png" alt="Avatar" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
-            </motion.div>
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
+            </div>
             
-            {/* Content Overlay */}
-            <div className="absolute inset-0 flex flex-col items-center justify-end p-10 z-10">
+            {/* Content Overlay - Much smaller and at the bottom */}
+            <div className="absolute inset-0 flex flex-col items-center justify-end p-6 z-10">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="w-full glass p-6 rounded-3xl border-white/10 backdrop-blur-xl shadow-2xl"
+                className="w-full glass py-3 px-4 rounded-2xl border-white/10 backdrop-blur-md"
               >
-                <h3 className="text-3xl font-bold gradient-text mb-2">Hello!</h3>
-                <p className="text-textSecondary text-base leading-relaxed">
-                  I'm <span className="text-primary font-bold">Harsh Khatri</span>. <br />
-                  Let's build something <span className="text-white font-medium italic">extraordinary</span> together!
-                </p>
-                <div className="mt-4 flex justify-center gap-2">
-                   <div className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce"></div>
-                   <div className="h-1.5 w-1.5 rounded-full bg-secondary animate-bounce delay-150"></div>
-                   <div className="h-1.5 w-1.5 rounded-full bg-accent animate-bounce delay-300"></div>
+                <div className="text-sm font-bold gradient-text mb-0.5">I'm Harsh Khatri</div>
+                <div className="text-[10px] text-textSecondary leading-tight">
+                  Let's build something extraordinary together!
+                </div>
+                <div className="mt-2 flex justify-center gap-1.5">
+                   <div className="h-1 w-1 rounded-full bg-primary"></div>
+                   <div className="h-1 w-1 rounded-full bg-secondary"></div>
+                   <div className="h-1 w-1 rounded-full bg-accent"></div>
                 </div>
               </motion.div>
             </div>
