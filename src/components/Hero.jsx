@@ -37,7 +37,7 @@ const ProfileCard = () => {
         <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-[2.5rem] overflow-hidden border border-white/20 bg-surface relative">
             {/* Background Avatar Image (Static as requested) */}
             <div className="absolute inset-0 w-full h-full overflow-hidden">
-              <img src="./public/Avatar.png" alt="Avatar" className="w-full h-full object-cover" />
+              <img src="/Avatar.png" alt="Avatar" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
             </div>
             
